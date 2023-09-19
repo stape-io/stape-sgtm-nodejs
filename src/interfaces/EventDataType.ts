@@ -1,9 +1,9 @@
-interface EventDataItem {
-  name: string,
-  value: string,
-  transformation?: string,
+interface EventDataType {
+  email?: string,
+  title?: string,
+  phone?: string,
+  size?: number,
+  [key: string]: any,
 }
-
-interface EventDataType extends Array<EventDataItem>{}
 
 export default EventDataType;

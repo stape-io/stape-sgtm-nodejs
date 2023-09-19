@@ -3,7 +3,6 @@ interface ConfigType {
   gtm_server_domain: string,
   protocol_version: number,
   richsstsse: boolean,
-  request_type: string,
 }
 
 

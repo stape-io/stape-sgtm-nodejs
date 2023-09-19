@@ -4,7 +4,7 @@ function sendData({
   hostname = '',
   path = '',
   postData = {},
-  method = 'get'
+  method = 'post'
 }) {
   return new Promise((resolve, reject) => {
     if (method == 'post') {
