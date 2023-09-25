@@ -10,3 +10,4 @@ jobs:
           node-version: "18"
       - run: npm ci
       - run: npm run test
+      - uses: ArtiomTr/jest-coverage-report-action@v2
