@@ -5,9 +5,13 @@
     "noEmit": true,
     "baseUrl": ".",
     "rootDir": ".",
-    "moduleResolution": "node",
+    "moduleResolution": "node"
   },
   "include": [
-    "src/*",
+    "src/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts"
   ]
 }
