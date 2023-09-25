@@ -38,9 +38,13 @@ export class StapeSGTM {
       }
       url.search = params.toString();
 
-      eventData.event_name = event_name;
+      const postData = {
+        ...eventData,
+        event_name,
+        v: this.config.protocol_version,
+      };
 
-      const response = await axios.post<R>(url.toString(), eventData);
+      const response = await axios.post<R>(url.toString(), postData);
       return response.data;
     } catch (error) {
       const response = (error as AxiosError).response;

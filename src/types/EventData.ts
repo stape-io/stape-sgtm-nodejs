@@ -21,7 +21,6 @@ export type UserData = Partial<{
 export type EventData = Partial<{
   client_id: string;
   currency: string;
-  event_name: string;
   ip_override: string;
   language: string;
   page_encoding: string;
