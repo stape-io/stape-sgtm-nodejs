@@ -1,2 +1,8 @@
 example/
 src/
+coverage/
+tsconfig.json
+tsconfig.es5.json
+tsconfig.esm.json
+.prettierrc
+jest.config.js

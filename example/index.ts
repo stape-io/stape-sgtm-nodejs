@@ -8,7 +8,6 @@ const sgtm = new StapeSGTM({
 const eventData: EventData = {
   client_id: '123456',
   currency: 'USD',
-  event_name: 'page_view',
   ip_override: '79.144.69.69',
   language: 'en',
   page_encoding: 'UTF-8',
