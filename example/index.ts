@@ -1,23 +1,23 @@
 import StapeSGTM, { transformations, EventData } from 'stape-sgtm-nodejs';
 
 const sgtm = new StapeSGTM({
-  gtm_server_domain: 'https://38c0-194-44-56-60.ngrok-free.app',
-  request_path: '/webhook',
+  gtm_server_domain: 'https://gtm.stape.io',
+  request_path: '/data',
 });
 
 const eventData: EventData = {
-  client_id: '123',
+  client_id: '123456',
   currency: 'USD',
   event_name: 'page_view',
-  ip_override: '127.0.0.1',
+  ip_override: '79.144.69.69',
   language: 'en',
   page_encoding: 'UTF-8',
-  page_hostname: 'localhost',
-  page_location: 'http://localhost:3000',
+  page_hostname: 'Stape',
+  page_location: 'http://stape.io',
   page_path: '/',
   user_data: {
     sha256_email_address: transformations.sha256hex('jhonn@doe.com'),
-    phone_number: '123456789',
+    phone_number: '123456769',
     address: {
       first_name: 'Jhon',
     },
