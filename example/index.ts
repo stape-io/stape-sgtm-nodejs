@@ -3,6 +3,8 @@ import StapeSGTM, { transformations, EventData } from 'stape-sgtm-nodejs';
 const sgtm = new StapeSGTM({
   gtm_server_domain: 'https://gtm.stape.io',
   request_path: '/data',
+  preview_header:
+    'ZW52LTV8VTc5TlhtZkx3SHpIU004bEpyQWtRZ3wxOTRlMjZlOGJjZTViNTQ2OWI3NzM=',
 });
 
 const eventData: EventData = {
