@@ -12,12 +12,14 @@ export class StapeSGTM {
     request_path = '/data',
     richsstsse = false,
     protocol_version = 2,
+    preview_header = '',
   }: StapeSGTMOptions) {
     this.config = {
       gtm_server_domain,
       request_path,
       richsstsse,
       protocol_version,
+      preview_header,
     };
     this.validateConfig();
   }
@@ -44,7 +46,14 @@ export class StapeSGTM {
         v: this.config.protocol_version,
       };
 
-      const response = await axios.post<R>(url.toString(), postData);
+      let headers: HeadersInit = {};
+      if (this.config.preview_header) {
+        headers['X-Gtm-Server-Preview'] = this.config.preview_header;
+      }
+
+      const response = await axios.post<R>(url.toString(), postData, {
+        headers,
+      });
       return response.data;
     } catch (error) {
       const response = (error as AxiosError).response;

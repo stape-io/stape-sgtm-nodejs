@@ -3,4 +3,5 @@ export type StapeSGTMOptions = {
   request_path?: string;
   protocol_version?: number;
   richsstsse?: boolean;
+  preview_header?: string;
 };

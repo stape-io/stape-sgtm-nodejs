@@ -22,7 +22,7 @@ describe('StapeSGTM', () => {
   });
 
   it('should send event data and return the response data', async () => {
-    const instance = createTestInstance();
+    const instance = createTestInstance({ preview_header: 'preview_header' });
 
     (axios.post as jest.Mock).mockResolvedValueOnce({ data: 'response data' });
 
@@ -36,6 +36,11 @@ describe('StapeSGTM', () => {
         ...eventData,
         event_name: 'event',
         v: 2,
+      },
+      {
+        headers: {
+          'X-Gtm-Server-Preview': 'preview_header',
+        },
       },
     );
   });
@@ -55,6 +60,9 @@ describe('StapeSGTM', () => {
         event_name: 'event',
         v: 2,
       },
+      {
+        headers: {},
+      },
     );
   });
 
@@ -70,6 +78,7 @@ describe('StapeSGTM', () => {
         event_name: 'event',
         v: 2,
       },
+      { headers: {} },
     );
   });
 
