@@ -5,13 +5,17 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    # npm trusted publishing: npm exchanges the job's OIDC token for a
+    # short-lived publish credential, so no NPM_TOKEN is stored anywhere.
+    # It needs npm >= 11.5.1, which ships with Node 24.
+    permissions:
+      contents: read
+      id-token: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: "18"
+          node-version: "24"
       - run: npm ci
       - run: npm run prepublish
-      - uses: JS-DevTools/npm-publish@v2
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
+      - uses: JS-DevTools/npm-publish@v4
